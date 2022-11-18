@@ -34,8 +34,7 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public Optional<Usuario> find(@PathVariable ("id") Integer id){
     	return repository.findById(id);
-    }
-    
+    }  
 
     
     @DeleteMapping("/{id}")
