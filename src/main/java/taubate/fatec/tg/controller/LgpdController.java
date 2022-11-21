@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import taubate.fatec.tg.model.Usuario;
+
 import taubate.fatec.tg.repository.MunicipeRepository;
 
 @RestController
