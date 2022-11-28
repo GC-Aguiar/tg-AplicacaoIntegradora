@@ -13,7 +13,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
-    @Autowired
+    
+	//Alterar para service
+	@Autowired
     private UsuarioRepository repository;
     @GetMapping
     public List<Usuario> list(){

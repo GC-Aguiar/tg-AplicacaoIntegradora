@@ -29,8 +29,7 @@ public class MunicipeController {
     }*/
     @GetMapping("/{cpf}")
     public Municipe find(@PathVariable ("cpf") String cpf){
-    	return repository.findByCpf(cpf);
-    	
+    	return repository.findByCpf(cpf);   	
     	
     }
 
