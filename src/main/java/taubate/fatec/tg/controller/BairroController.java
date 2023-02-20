@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import taubate.fatec.tg.model.Bairro;
-import taubate.fatec.tg.model.Municipe;
 import taubate.fatec.tg.service.BairroService;
 
 @RestController

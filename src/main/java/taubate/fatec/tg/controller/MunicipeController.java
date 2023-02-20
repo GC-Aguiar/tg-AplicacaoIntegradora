@@ -17,7 +17,7 @@ import taubate.fatec.tg.repository.MunicipeRepository;
 public class MunicipeController {
 	
     @Autowired
-    private MunicipeRepository repository;
+    private MunicipeRepository repository; // mudar para service || controller > service > repository
     @GetMapping
     public List<Municipe> list(){
     	System.out.println("List");
