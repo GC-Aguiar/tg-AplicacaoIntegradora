@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import taubate.fatec.tg.model.Empresa;
-import taubate.fatec.tg.service.EmpresaService;
+import taubate.fatec.tg.model.Uf;
+import taubate.fatec.tg.service.UfService;
 
 @RestController
-@RequestMapping("/empresas")
-public class EmpresaController {
+@RequestMapping("/ufs")
+public class UfController {
 	
 	@Autowired
-	private EmpresaService empresa ;
-		
+	private UfService uf;
+	
 	@GetMapping
-    public List<Empresa> listar(){
+    public List<Uf> listar(){
     	System.out.println("List");
-        return empresa.buscarEmpresas();
+        return uf.buscarUfs();
     }
 
 }

@@ -11,44 +11,37 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_empresa")
-public class Empresa {
+@Table(name = "tbl_perfil_usuario")
+public class PerfilUsuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "EMP_CODIGO")
+	@Column(name = "PER_CODIGO")
 	private Integer codigo;
-	@Column(name = "EMP_DESCRICAO", length = 80, nullable = false)
+	@Column(name = "PER_DESCRICAO", length = 80, nullable = false)
 	private String descricao;
-	@Column(name = "EMP_CNPJ", length = 14, nullable = false)
-	private String cnpj;
-	@Column(name = "EMP_EMAIL", length = 80, nullable = false)
-	private String email;
-	@Column(name = "EMP_PREPOSTO", length = 80, nullable = false)
-	private String preposto;
+	@Column(name = "PER_STATUS", length = 12, nullable = false)
+	private String status;
 	
-	@Column(name = "EMP_DATA_CADASTRO", nullable = false)
+	@Column(name = "PER_DATA_CADASTRO", nullable = false)
 	private Date dataCadastro;
 	@Column(name = "USU_CODIGO_CADASTRO", nullable = false)
 	private Integer usuarioCadastro;
-	@Column(name = "EMP_DATA_ALTERACAO", nullable = false)
+	@Column(name = "PER_DATA_ALTERACAO", nullable = false)
 	private Date dataAlteracao;
 	@Column(name = "USU_CODIGO_ALTERACAO",nullable = false)
 	private Integer usuarioAlteracao;
 	
 	
-	
-	public Empresa() {
+	public PerfilUsuario() {
 		
 	}
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cnpj, codigo, dataAlteracao, dataCadastro, descricao, email, preposto, usuarioAlteracao,
-				usuarioCadastro);
+		return Objects.hash(codigo, dataAlteracao, dataCadastro, descricao, status, usuarioAlteracao, usuarioCadastro);
 	}
-
 
 
 	@Override
@@ -59,24 +52,20 @@ public class Empresa {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Empresa other = (Empresa) obj;
-		return Objects.equals(cnpj, other.cnpj) && Objects.equals(codigo, other.codigo)
-				&& Objects.equals(dataAlteracao, other.dataAlteracao)
+		PerfilUsuario other = (PerfilUsuario) obj;
+		return Objects.equals(codigo, other.codigo) && Objects.equals(dataAlteracao, other.dataAlteracao)
 				&& Objects.equals(dataCadastro, other.dataCadastro) && Objects.equals(descricao, other.descricao)
-				&& Objects.equals(email, other.email) && Objects.equals(preposto, other.preposto)
-				&& Objects.equals(usuarioAlteracao, other.usuarioAlteracao)
+				&& Objects.equals(status, other.status) && Objects.equals(usuarioAlteracao, other.usuarioAlteracao)
 				&& Objects.equals(usuarioCadastro, other.usuarioCadastro);
 	}
 
 
-
 	@Override
 	public String toString() {
-		return "Empresa [codigo=" + codigo + ", descricao=" + descricao + ", cnpj=" + cnpj + ", email=" + email
-				+ ", preposto=" + preposto + ", dataCadastro=" + dataCadastro + ", usuarioCadastro=" + usuarioCadastro
-				+ ", dataAlteracao=" + dataAlteracao + ", usuarioAlteracao=" + usuarioAlteracao + "]";
+		return "PerfilUsuario [codigo=" + codigo + ", descricao=" + descricao + ", status=" + status + ", dataCadastro="
+				+ dataCadastro + ", usuarioCadastro=" + usuarioCadastro + ", dataAlteracao=" + dataAlteracao
+				+ ", usuarioAlteracao=" + usuarioAlteracao + "]";
 	}
-
 
 
 	public Integer getCodigo() {
@@ -84,11 +73,9 @@ public class Empresa {
 	}
 
 
-
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-
 
 
 	public String getDescricao() {
@@ -96,47 +83,19 @@ public class Empresa {
 	}
 
 
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 
 
-
-	public String getCnpj() {
-		return cnpj;
+	public String getStatus() {
+		return status;
 	}
 
 
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-
-	public String getPreposto() {
-		return preposto;
-	}
-
-
-
-	public void setPreposto(String preposto) {
-		this.preposto = preposto;
-	}
-
 
 
 	public Date getDataCadastro() {
@@ -144,11 +103,9 @@ public class Empresa {
 	}
 
 
-
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-
 
 
 	public Integer getUsuarioCadastro() {
@@ -156,11 +113,9 @@ public class Empresa {
 	}
 
 
-
 	public void setUsuarioCadastro(Integer usuarioCadastro) {
 		this.usuarioCadastro = usuarioCadastro;
 	}
-
 
 
 	public Date getDataAlteracao() {
@@ -168,11 +123,9 @@ public class Empresa {
 	}
 
 
-
 	public void setDataAlteracao(Date dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
 	}
-
 
 
 	public Integer getUsuarioAlteracao() {
@@ -180,10 +133,11 @@ public class Empresa {
 	}
 
 
-
 	public void setUsuarioAlteracao(Integer usuarioAlteracao) {
 		this.usuarioAlteracao = usuarioAlteracao;
 	}
+	
+	
 	
 
 }

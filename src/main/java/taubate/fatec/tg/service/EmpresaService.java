@@ -29,25 +29,6 @@ public class EmpresaService {
 		return repository.findEmpresaByCnpj(cnpj);
 	}
 	
-	
-	
-	/*
-		@Autowired
-	private CidadeRepository repository;
-	
-	public List<Cidade> buscarCidades(){
-		System.out.println(repository.findAll());
-		return repository.findAll();
-	}
-	
-	public Optional<Cidade> buscarCidadePorId(Integer id){
-		System.out.println(repository.findById(id));
-		return repository.findById(id);
-	}
-	public List<String> buscarCidadePorCodigoUf(Integer UfCodigo){
-		
-		return repository.findCidadeByUf(UfCodigo);
-	}
-	 */
+
 
 }
