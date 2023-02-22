@@ -13,12 +13,9 @@ import taubate.fatec.tg.model.Bairro;
 public interface BairroRepository extends JpaRepository <Bairro, Integer> {
 	
 	/*
-	 * Exemplo
-	 * 
-	 * @Query("SELECT e FROM Usuario e JOIN FETCH e.roles WHERE e.login= (:login)")
-	 * public Usuario findByLogin(@Param("login") String login);
-	 * 
-	 * boolean existsByUsername(String login);
+	 	@Modifying
+		@Query("UPDATE Bairro b set b.firstname = ?1, b.lastname = ?2 where b.codigo = ?3")
+		void setBairroById(String firstname, String lastname, Integer userId);
 	 */
 	
 	 @Query("SELECT b.descricao FROM Bairro b WHERE b.regiao= (:regiao)")

@@ -16,7 +16,7 @@ import javax.persistence.Transient;
 @Table(name = "tbl_usuario")
 public class Usuario {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Verificar erros no insert do MariaDB
 	@Column(name = "USU_CODIGO")
 	private Integer codigo;
 	@Column(name = "USU_NOME", length = 80, nullable = false)

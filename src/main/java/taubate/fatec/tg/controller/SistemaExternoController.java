@@ -11,7 +11,7 @@ import taubate.fatec.tg.model.SistemaExterno;
 import taubate.fatec.tg.service.SistemaExternoService;
 
 @RestController
-@RequestMapping("/sistemasexternos")
+@RequestMapping("/sistemas")
 public class SistemaExternoController {
 	
 	@Autowired

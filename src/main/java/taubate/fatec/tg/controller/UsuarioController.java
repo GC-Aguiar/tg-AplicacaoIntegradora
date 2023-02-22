@@ -31,6 +31,7 @@ public class UsuarioController {
     }
     @PutMapping
     public void update(@RequestBody Usuario usuario){
+    	System.out.println("Update");
         repository.save(usuario);
     }
     @GetMapping("/{id}")

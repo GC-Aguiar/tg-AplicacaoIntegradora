@@ -10,4 +10,10 @@ import taubate.fatec.tg.model.Usuario;
 public interface UsuarioRepository extends JpaRepository <Usuario, Integer> {
 
 	
+	/*
+	@Modifying
+	@Query("update User u set u.firstname = ?1, u.lastname = ?2 where u.id = ?3")
+	void setUserInfoById(String firstname, String lastname, Integer userId);
+	 */
+	
 }

@@ -29,6 +29,25 @@ public class BairroService {
 		return repository.findBairroByRegiao(regiao);
 	}
 	
+	public void gravarBairro(Bairro bairro) {
+		repository.save(bairro);
+	}
+	
+	public void deletarBairro(Integer id) {
+		repository.deleteById(id);
+	}
+	
+	public void alterarBairro(Bairro bairro, Integer id) {
+		/*
+		         Employee updateEmployee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
+		 */
+		
+		
+		repository.save(bairro); //Precisa receber todos os dados do bairro
+		
+	}
+	
 	
 
 }
