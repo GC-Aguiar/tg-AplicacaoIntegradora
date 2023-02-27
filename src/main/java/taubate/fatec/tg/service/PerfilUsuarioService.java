@@ -28,6 +28,22 @@ public class PerfilUsuarioService {
 		
 		return repository.findPerfilUsuarioByStatus(status);
 	}
+	
+	public void gravarPerfilUsuario(PerfilUsuario perfilUsuario) {
+		repository.save(perfilUsuario);
+	}
+	
+	public void deletarPerfilUsuario(Integer id) {
+		repository.deleteById(id);
+	}
+	public void alterarPerfilUsuario(PerfilUsuario perfilUsuario, Integer id) {
+		/*
+        Employee updateEmployee = employeeRepository.findById(id)
+       .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
+		 */
+		
+		repository.save(perfilUsuario);
+	}
 
 
 }

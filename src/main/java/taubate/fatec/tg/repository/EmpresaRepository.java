@@ -14,6 +14,6 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Integer>{
 	
 	//Queries personalizadas
 	 @Query("SELECT e.descricao FROM Empresa e WHERE e.cnpj= (:cnpj)")
-	 public List<String> findEmpresaByCnpj(@Param("cnpj") Integer cnpj);
+	 public List<String> findEmpresaByCnpj(@Param("cnpj") String cnpj);
 
 }

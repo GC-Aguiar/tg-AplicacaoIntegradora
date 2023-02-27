@@ -28,7 +28,24 @@ public class CidadeService {
 	public List<String> buscarCidadePorCodigoUf(Integer UfCodigo){
 		
 		return repository.findCidadeByUf(UfCodigo);
-	}	
+	}
+	
+	public void gravarCidade(Cidade cidade) {
+		repository.save(cidade);
+	}
+	
+	public void deletarCidade(Integer id) {
+		repository.deleteById(id);
+	}
+	
+	public void alterarCidade(Cidade cidade, Integer id) {
+		/*
+        Employee updateEmployee = employeeRepository.findById(id)
+       .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
+		 */
+		
+		repository.save(cidade);
+	}
 	
 
 }

@@ -28,6 +28,18 @@ public class SistemaExternoService {
 		
 		return repository.findSistemaExternoByStatus(status);
 	}
+	
+	public void gravarSistemaExterno (SistemaExterno sistemaExterno) {
+		repository.save(sistemaExterno);
+	}
+	
+	public void deletarSistemaExterno(Integer id) {
+		repository.deleteById(id);
+	}
+	
+	public void alterarSistemaExterno (SistemaExterno sistemaExterno, Integer id) {
+		repository.save(sistemaExterno);
+	}
 
 
 }

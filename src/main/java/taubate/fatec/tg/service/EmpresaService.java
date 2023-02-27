@@ -15,19 +15,37 @@ public class EmpresaService {
 	@Autowired
 	private EmpresaRepository repository;
 	
+	
 	public List<Empresa> buscarEmpresas(){
 		System.out.println(repository.findAll());
 		return repository.findAll();
 	}
-	
+		
 	public Optional<Empresa> buscarEmpresaPorId(Integer id){
 		System.out.println(repository.findById(id));
 		return repository.findById(id);
-	}
-	public List<String> buscarEmpresaPorCnpj(Integer cnpj){
-		
+	}	
+	public List<String> buscarEmpresaPorCnpj(String cnpj){
 		return repository.findEmpresaByCnpj(cnpj);
 	}
+	
+	public void gravarEmpresa(Empresa empresa) {
+		repository.save(empresa);
+	}
+	
+	public void deletarEmpresa(Integer id) {
+		repository.deleteById(id);
+	}
+	
+	public void alterarEmpresa(Empresa empresa, Integer id) {
+		/*
+		         Employee updateEmployee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
+		 */
+		repository.save(empresa); //Precisa receber todos os dados 
+		
+	}
+	
 	
 
 
