@@ -18,7 +18,7 @@ public interface MunicipeRepository extends JpaRepository<Municipe, Integer> {
 
 	boolean existsByCpf(String cpf);
 
-	@Query("SELECT m.cpf FROM Municipe m WHERE m.solicitaExclusao = 1")
+	@Query("SELECT m.cpf FROM Municipe m WHERE m.solicitaExclusao = 'true'")
 	public List<String> listRequiresExclusion();
 	
 	//Não está funcionando

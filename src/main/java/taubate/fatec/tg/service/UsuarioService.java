@@ -38,4 +38,8 @@ public class UsuarioService {
 		System.out.println("Listando todos os Usuário");
 		return repository.findAll();		
 	}
+	
+	public void deletarUsuario(Integer id) {
+		repository.deleteById(id);
+	}
 }

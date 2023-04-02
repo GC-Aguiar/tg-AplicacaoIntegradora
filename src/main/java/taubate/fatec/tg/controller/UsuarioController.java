@@ -1,47 +1,52 @@
 package taubate.fatec.tg.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.web.bind.annotation.*;
-
-import taubate.fatec.tg.model.Usuario;
-import taubate.fatec.tg.repository.UsuarioRepository;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import taubate.fatec.tg.model.Usuario;
+import taubate.fatec.tg.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
-    
-	//Alterar para service
+    	
 	@Autowired
-    private UsuarioRepository repository;
+    private UsuarioService service;
     @GetMapping
     public List<Usuario> list(){
     	System.out.println("List");
-        return repository.findAll();
+        return service.buscarUsuarios();
     }
     @PostMapping
     public void save(@RequestBody Usuario usuario){
     	System.out.println("Save");
     	System.out.println(usuario);
     	
-        repository.save(usuario);
+       service.gravarUsuario(usuario);
     }
     @PutMapping
     public void update(@RequestBody Usuario usuario){
     	System.out.println("Update");
-        repository.save(usuario);
+        service.alterarUsuario(usuario);
     }
     @GetMapping("/{id}")
     public Optional<Usuario> find(@PathVariable ("id") Integer id){
-    	return repository.findById(id);
+    	return service.buscarUsuarioPorId(id);
     }  
 
     
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("/id") Integer id){
-        repository.deleteById(id);
+        service.deletarUsuario(id);
     }
 }
