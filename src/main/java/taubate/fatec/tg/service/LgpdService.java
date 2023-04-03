@@ -15,6 +15,7 @@ public class LgpdService {
 	
 	public List<String> buscarLgpd () {		
 		return repository.listRequiresExclusion();
+		//return repository.findBysolicitaExclusaoTrue();
 	}
 	
 	public void inserirLgpd(@RequestBody String cpf) {

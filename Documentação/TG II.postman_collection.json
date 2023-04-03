@@ -1,0 +1,915 @@
+{
+	"info": {
+		"_postman_id": "a067a570-5cf1-4320-87f1-5a00d8e18093",
+		"name": "TG II",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bairros",
+			"item": [
+				{
+					"name": "Buscar Bairros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bairros/3990655",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bairros",
+								"3990655"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Bairros por região",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bairros/regiao/central",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bairros",
+								"regiao",
+								"central"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Bairros",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n\r\n    \"descricao\": \"Hockenheim\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bairros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bairros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Bairro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {        \r\n        \"descricao\": \"Hockenheim\",\r\n        \"regiao\": \"Parte Alta\",\r\n        \"dataCadastro\": \"2023-02-19\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2023-02-19\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bairros/3990660",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bairros",
+								"3990660"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Bairro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bairros/3990655",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bairros",
+								"3990655"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresas",
+			"item": [
+				{
+					"name": "Buscar Empresas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Empresas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Empresas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empresas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Empresa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/empresas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sistemas",
+			"item": [
+				{
+					"name": "Buscar Sistemas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sistemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sistemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Sistema",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sistemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sistemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Sistemas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sistemas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sistemas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Sistemas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sistemas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sistemas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cidades",
+			"item": [
+				{
+					"name": "Buscar Cidades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Cidade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Cidades",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Cidades",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Perfil Usuário",
+			"item": [
+				{
+					"name": "Buscar Perfil Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/perfisusuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"perfisusuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Perfil Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/perfisusuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"perfisusuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Perfil Usuário",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/perfisusuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"perfisusuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Perfil Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/perfisusuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"perfisusuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UFs",
+			"item": [
+				{
+					"name": "Buscar UF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ufs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ufs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar UF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ufs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ufs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar UF",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ufs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ufs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar UF",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ufs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ufs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Buscar Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"codigo\": null,\r\n    \"nome\": \"Gerente\",\r\n    \"login\": \"gerente\",\r\n    \"senha\": \"consulta\",\r\n    \"status\": \"Ativo\",\r\n    \"codigoPerfil\": 1,\r\n    \"codigoSistema\": 1,\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1,\r\n    \"roles\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Usuário",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Munícipes",
+			"item": [
+				{
+					"name": "Buscar Munícipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/municipes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"municipes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Munícipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/municipes/61309669843",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"municipes",
+								"61309669843"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar Munícipes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"codigo\": null,\r\n    \"nome\": \"Gerente\",\r\n    \"login\": \"gerente\",\r\n    \"senha\": \"consulta\",\r\n    \"status\": \"Ativo\",\r\n    \"codigoPerfil\": 1,\r\n    \"codigoSistema\": 1,\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1,\r\n    \"roles\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/municipes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"municipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Munícipe",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"João Saint\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/municipes/61309669843",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"municipes",
+								"61309669843"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Munícipe",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/municipes/61309669843",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"municipes",
+								"61309669843"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LGPD",
+			"item": [
+				{
+					"name": "Buscar Solicitações LGPD",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lgpd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lgpd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir Solicitações LGPD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lgpd/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lgpd",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Início",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inicio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inicio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

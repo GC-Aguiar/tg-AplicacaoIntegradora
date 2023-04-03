@@ -58,8 +58,8 @@ public class Municipe {
 	@Column(name = "CID_COD_NASCIMENTO", nullable = false)
 	private Integer cidadeNascimento;
 	
-	@Column(name = "MUN_SOLICITA_EXCLUSAO", columnDefinition = "TINYINT")
-	@Type(type = "org.hibernate.type.NumericBooleanType")
+	@Column(name = "MUN_SOLICITA_EXCLUSAO", columnDefinition = "BOOLEAN")
+	//@Type(type = "org.hibernate.type.NumericBooleanType")
 	private boolean solicitaExclusao;
 	
 	@Column(name = "MUN_DATA_CADASTRO", nullable = false)

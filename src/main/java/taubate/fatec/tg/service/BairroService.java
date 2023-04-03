@@ -43,8 +43,11 @@ public class BairroService {
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
 		 */
 		
+        if(bairro.getCodigo().equals(id) && repository.findById(id).equals(bairro)) {
+        	repository.save(bairro); //Precisa receber todos os dados do bairro // Precisa passar o ID
+        }
 		
-		repository.save(bairro); //Precisa receber todos os dados do bairro
+		
 		
 	}
 	

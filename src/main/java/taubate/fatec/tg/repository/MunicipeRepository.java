@@ -17,9 +17,15 @@ public interface MunicipeRepository extends JpaRepository<Municipe, Integer> {
 	public Municipe findByCpf(@Param("cpf") String cpf);
 
 	boolean existsByCpf(String cpf);
+	
+	public List<String> findBysolicitaExclusaoTrue();
 
-	@Query("SELECT m.cpf FROM Municipe m WHERE m.solicitaExclusao = 'true'")
+	@Query("SELECT m.cpf FROM Municipe m WHERE m.solicitaExclusao = ?1")
 	public List<String> listRequiresExclusion();
+	
+	
+	//@Query("SELECT b.descricao FROM Bairro b WHERE b.regiao= (:regiao)")
+	//public List<String> findBairroByRegiao(@Param("regiao") String regiao);
 	
 	//Não está funcionando
 	@Modifying
