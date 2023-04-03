@@ -16,4 +16,5 @@ public interface UsuarioRepository extends JpaRepository <Usuario, Integer> {
 	void setUserInfoById(String firstname, String lastname, Integer userId);
 	 */
 	
+	Usuario findByLogin(String login);
 }

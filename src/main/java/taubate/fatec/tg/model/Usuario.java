@@ -1,6 +1,7 @@
 package taubate.fatec.tg.model;
 
 import java.sql.Date;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,9 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity
 @Table(name = "tbl_usuario")
-public class Usuario {
+public class Usuario implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Verificar erros no insert do MariaDB
 	@Column(name = "USU_CODIGO")
@@ -171,6 +176,47 @@ public class Usuario {
 				&& Objects.equals(senha, other.senha) && Objects.equals(status, other.status)
 				&& Objects.equals(usuarioAlteracao, other.usuarioAlteracao)
 				&& Objects.equals(usuarioCadastro, other.usuarioCadastro);
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.senha;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.login;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
 	}	
 
 }

@@ -3,6 +3,8 @@ package taubate.fatec.tg.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,7 @@ public class BairroController {
 	private BairroService service;
 		
 	@GetMapping
+	@RolesAllowed("ROLE_ADMIN") // Perfis que podem acessar o método  @RolesAllowed({"USER", "ADMIN"})
     public List<Bairro> listar(){
     	System.out.println("List");
         return service.buscarBairros();
