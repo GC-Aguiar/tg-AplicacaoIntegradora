@@ -33,7 +33,7 @@ public class Usuario implements UserDetails {
 	@Column(name = "USU_STATUS", length = 12, nullable = false)
 	private String status;
 	@Column(name = "PER_COD", nullable = false)
-	private Integer codigoPerfil;
+	private String codigoPerfil; // Alterado para string para utilizar no GrantedAuthority
 	@Column(name = "SIS_CODIGO", nullable = false)
 	private Integer codigoSistema;
 	@Column(name = "USU_DATA_CADASTRO", nullable = false)
@@ -46,7 +46,7 @@ public class Usuario implements UserDetails {
 	private Integer usuarioAlteracao; 
 	
 	@Transient
-	private List<String> roles;
+	private List<String> roles;	
 	
 	
 	public Usuario() {
@@ -97,11 +97,11 @@ public class Usuario implements UserDetails {
 		this.status = status;
 	}
 
-	public Integer getCodigoPerfil() {
+	public String getCodigoPerfil() {
 		return codigoPerfil;
 	}
 
-	public void setCodigoPerfil(Integer codigoPerfil) {
+	public void setCodigoPerfil(String codigoPerfil) {
 		this.codigoPerfil = codigoPerfil;
 	}
 
@@ -180,7 +180,7 @@ public class Usuario implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+		return List.of(new SimpleGrantedAuthority(login));
 	}
 
 	@Override

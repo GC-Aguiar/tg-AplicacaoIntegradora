@@ -3,6 +3,8 @@ package taubate.fatec.tg.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,29 +24,36 @@ public class UsuarioController {
     	
 	@Autowired
     private UsuarioService service;
-    @GetMapping
+   
+	
+	@GetMapping
+	@RolesAllowed({"admin", "sistema", "consulta"})
     public List<Usuario> list(){
     	System.out.println("List");
         return service.buscarUsuarios();
     }
-    @PostMapping
+    
+	@RolesAllowed("1")
+	@PostMapping
     public void save(@RequestBody Usuario usuario){
     	System.out.println("Save");
     	System.out.println(usuario);
     	
        service.gravarUsuario(usuario);
     }
+	@RolesAllowed("1")
     @PutMapping
     public void update(@RequestBody Usuario usuario){
     	System.out.println("Update");
         service.alterarUsuario(usuario);
     }
+	@RolesAllowed({"1", "2", "3"})
     @GetMapping("/{id}")
     public Optional<Usuario> find(@PathVariable ("id") Integer id){
     	return service.buscarUsuarioPorId(id);
     }  
 
-    
+	@RolesAllowed("1")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("/id") Integer id){
         service.deletarUsuario(id);
