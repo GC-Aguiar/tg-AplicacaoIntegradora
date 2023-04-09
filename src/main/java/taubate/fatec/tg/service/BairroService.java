@@ -41,11 +41,18 @@ public class BairroService {
 		/*
 		         Employee updateEmployee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
-		 */
+                
+                && repository.findById(id).equals(bairro.getCodigo())
 		
-        if(bairro.getCodigo().equals(id) && repository.findById(id).equals(bairro)) {
+		*/
+        if(bairro.getCodigo().equals(id) && repository.existsById(id)){
+        	System.out.println("Validação OK");
         	repository.save(bairro); //Precisa receber todos os dados do bairro // Precisa passar o ID
+        }else {
+        	System.out.println("Erro na Validação");
         }
+        
+		
 		
 		
 		
