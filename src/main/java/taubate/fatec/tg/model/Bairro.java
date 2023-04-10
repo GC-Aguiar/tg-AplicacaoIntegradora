@@ -20,8 +20,7 @@ public class Bairro {
 	private Integer codigo;
 	
 	@Column(name = "BAI_DESCR", length = 40, nullable = false)
-	private String descricao;
-	
+	private String descricao;	
 	@Column(name = "BAI_REGIAO", length = 20, nullable = false)
 	private String regiao;
 	

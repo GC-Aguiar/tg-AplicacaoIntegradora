@@ -14,7 +14,7 @@ import taubate.fatec.tg.model.Municipe;
 public interface MunicipeRepository extends JpaRepository<Municipe, Integer> {
 
 	@Query("SELECT m FROM Municipe m WHERE m.cpf = (:cpf)")
-	public Municipe findByCpf(@Param("cpf") String cpf);
+	public Municipe findMunicipeByCpf(@Param("cpf") String cpf);
 
 	boolean existsByCpf(String cpf);
 	
@@ -23,16 +23,14 @@ public interface MunicipeRepository extends JpaRepository<Municipe, Integer> {
 	@Query("SELECT m.cpf FROM Municipe m WHERE m.solicitaExclusao = ?1")
 	public List<String> listRequiresExclusion();
 	
-	
-	//@Query("SELECT b.descricao FROM Bairro b WHERE b.regiao= (:regiao)")
-	//public List<String> findBairroByRegiao(@Param("regiao") String regiao);
-	
 	//Não está funcionando
 	@Modifying
 	@Query("UPDATE Municipe m SET m.solicitaExclusao = 1 WHERE m.cpf = (:cpf)")
 	public void includeExclusionRequest (@Param("cpf") String cpf);
 	
-		
+	
+	//@Query("SELECT b.descricao FROM Bairro b WHERE b.regiao= (:regiao)")
+	//public List<String> findBairroByRegiao(@Param("regiao") String regiao);		
 
 }
 

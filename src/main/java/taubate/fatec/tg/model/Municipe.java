@@ -21,6 +21,7 @@ public class Municipe {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MUN_CODIGO")
 	private Integer codigo;
+	
 	@Column(name = "MUN_NOME", length = 80, nullable = false)
 	private String nome;
 	@Column(name = "MUN_TELEFONE", length = 13, nullable = false)

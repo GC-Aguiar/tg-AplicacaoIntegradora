@@ -47,7 +47,7 @@ public class UsuarioController {
     	System.out.println("Update");
         service.alterarUsuario(usuario);
     }
-	@RolesAllowed({"1", "2", "3"})
+	//@RolesAllowed({"1", "2", "3", "admin"})
     @GetMapping("/{id}")
     public Optional<Usuario> find(@PathVariable ("id") Integer id){
     	return service.buscarUsuarioPorId(id);

@@ -50,14 +50,7 @@ public class BairroService {
         	repository.save(bairro); //Precisa receber todos os dados do bairro // Precisa passar o ID
         }else {
         	System.out.println("Erro na Validação");
-        }
-        
-		
-		
-		
-		
+        } 				
 	}
-	
-	
 
 }
