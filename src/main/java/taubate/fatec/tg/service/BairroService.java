@@ -1,5 +1,8 @@
 package taubate.fatec.tg.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,6 +50,17 @@ public class BairroService {
 		*/
         if(bairro.getCodigo().equals(id) && repository.existsById(id)){
         	System.out.println("Validação OK");
+        	/*
+        	Calendar calendario = Calendar.getInstance();
+            Date dataAtual = calendario.getTime();
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            String dataFormatada = formato.format(dataAtual);
+            bairro.setDataAlteracao((java.sql.Date) dataAtual);
+            
+            System.out.println("Data atual: " + dataFormatada);
+            */
+            
+        	
         	repository.save(bairro); //Precisa receber todos os dados do bairro // Precisa passar o ID
         }else {
         	System.out.println("Erro na Validação");

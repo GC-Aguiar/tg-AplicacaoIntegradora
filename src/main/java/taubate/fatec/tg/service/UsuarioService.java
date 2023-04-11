@@ -20,10 +20,13 @@ public class UsuarioService {
 		repository.save(usuario);
 		
 	}
-	public void alterarUsuario(Usuario usuario) {
-		System.out.println("Alterando Usuário");
-		repository.save(usuario);
-		// TODO		
+	public void alterarUsuario(Usuario usuario, Integer id) {
+		if(usuario.getCodigo().equals(id) && repository.existsById(id)){
+        	System.out.println("Validação OK");
+        	repository.save(usuario); //Precisa receber todos os dados// Precisa passar o ID
+        }else {
+        	System.out.println("Erro na Validação");
+        }
 	}
 	
 	public Optional<Usuario> buscarUsuarioPorId(Integer id){

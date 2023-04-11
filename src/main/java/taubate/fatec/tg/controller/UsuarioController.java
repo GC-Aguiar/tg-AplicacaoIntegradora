@@ -27,7 +27,7 @@ public class UsuarioController {
    
 	
 	@GetMapping
-	@RolesAllowed({"admin", "sistema", "consulta"})
+	@RolesAllowed("consulta")
     public List<Usuario> list(){
     	System.out.println("List");
         return service.buscarUsuarios();
