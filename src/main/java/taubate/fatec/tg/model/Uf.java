@@ -15,9 +15,9 @@ import javax.persistence.Table;
 public class Uf {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "UF_CODIGO")
 	private Integer codigo;
+	
 	@Column(name = "UF_DESCRICAO", length = 20, nullable = false)
 	private String descricao;
 	@Column(name = "UF_REGIAO", length = 12, nullable = false)

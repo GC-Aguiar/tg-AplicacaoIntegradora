@@ -38,7 +38,12 @@ public class SistemaExternoService {
 	}
 	
 	public void alterarSistemaExterno (SistemaExterno sistemaExterno, Integer id) {
-		repository.save(sistemaExterno);
+        if(sistemaExterno.getCodigo().equals(id) && repository.existsById(id)){
+        	System.out.println("Validação OK");
+        	repository.save(sistemaExterno); //Precisa receber todos os dados // Precisa passar o ID
+        }else {
+        	System.out.println("Erro na Validação");
+        }
 	}
 
 

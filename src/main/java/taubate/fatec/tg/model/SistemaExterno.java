@@ -18,6 +18,7 @@ public class SistemaExterno {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "SIS_CODIGO")
 	private Integer codigo;
+	
 	@Column(name = "SIS_DESCRICAO", length = 80, nullable = false)
 	private String descricao;
 	@Column(name = "EMP_CODIGO", nullable = false)

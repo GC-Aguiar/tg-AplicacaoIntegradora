@@ -11,10 +11,20 @@
 				{
 					"name": "Buscar Bairros",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/bairros/3990655",
+							"raw": "http://localhost:8080/bairros/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -22,7 +32,7 @@
 							"port": "8080",
 							"path": [
 								"bairros",
-								"3990655"
+								"1"
 							]
 						}
 					},
@@ -52,11 +62,21 @@
 				{
 					"name": "Gravar Bairros",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODEwOTExMjd9.kS7WXad-tBos-lui1IELThyxYsMgsXj-JT2p9t5j4AM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n\r\n    \"descricao\": \"Hockenheim\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "{   \r\n    \"descricao\": \"Taubaté High Speed Ring\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -80,11 +100,21 @@
 				{
 					"name": "Alterar Bairro",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {        \r\n        \"descricao\": \"Hockenheim\",\r\n        \"regiao\": \"Parte Alta\",\r\n        \"dataCadastro\": \"2023-02-19\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2023-02-19\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
+							"raw": "{   \r\n    \"codigo\": 3990663,\r\n    \"descricao\": \"Imola\",\r\n    \"regiao\": \"Parte Baixa\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -92,7 +122,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/bairros/3990660",
+							"raw": "http://localhost:8080/bairros/3990663",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -100,7 +130,7 @@
 							"port": "8080",
 							"path": [
 								"bairros",
-								"3990660"
+								"3990663"
 							]
 						}
 					},
@@ -109,10 +139,20 @@
 				{
 					"name": "Deletar Bairro",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODEwNjY5NTF9.6MHoDuUXD-ZFMAADpPbnihpjnBJko8sChxM7HEU0-4M",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/bairros/3990655",
+							"raw": "http://localhost:8080/bairros/3990656",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -120,7 +160,7 @@
 							"port": "8080",
 							"path": [
 								"bairros",
-								"3990655"
+								"3990656"
 							]
 						}
 					},
@@ -134,6 +174,16 @@
 				{
 					"name": "Buscar Empresas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODEwOTExMjd9.kS7WXad-tBos-lui1IELThyxYsMgsXj-JT2p9t5j4AM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -153,11 +203,21 @@
 				{
 					"name": "Gravar Empresas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODEwOTExMjd9.kS7WXad-tBos-lui1IELThyxYsMgsXj-JT2p9t5j4AM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \r\n        \"descricao\": \"SOFT FATEC\",\r\n        \"cnpj\": \"62823257000109\",\r\n        \"email\": \"guilherme.aguiar5@fatec.sp.gov.br\",\r\n        \"preposto\": \"Guilherme Aguiar\",\r\n        \"dataCadastro\": \"2023-04-04\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2023-04-04\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -181,11 +241,21 @@
 				{
 					"name": "Alterar Empresas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": 5,\r\n        \"descricao\": \"Microsoft\",\r\n        \"cnpj\": \"00000000001\",\r\n        \"email\": \"test@test\",\r\n        \"preposto\": \"Bill Gates\",\r\n        \"dataCadastro\": \"2023-04-04\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2023-04-04\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -193,7 +263,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/empresas/1",
+							"raw": "http://localhost:8080/empresas/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -201,7 +271,7 @@
 							"port": "8080",
 							"path": [
 								"empresas",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -210,10 +280,20 @@
 				{
 					"name": "Deletar Empresa",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/empresas/1",
+							"raw": "http://localhost:8080/empresas/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -221,7 +301,7 @@
 							"port": "8080",
 							"path": [
 								"empresas",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -235,6 +315,16 @@
 				{
 					"name": "Buscar Sistemas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -254,11 +344,21 @@
 				{
 					"name": "Gravar Sistema",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"descricao\": \"Sistema Integrador de Teste\",\r\n        \"empCodigo\": 1,\r\n        \"status\": \"Ativo\",\r\n        \"email\": \"admin@admin\",\r\n        \"preposto\": \"Admin\",\r\n        \"dataCadastro\": \"2022-08-29\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-08-29\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -282,11 +382,21 @@
 				{
 					"name": "Alterar Sistemas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": 3,\r\n        \"descricao\": \"SIT\",\r\n        \"empCodigo\": 1,\r\n        \"status\": \"Ativo\",\r\n        \"email\": \"admin@admin\",\r\n        \"preposto\": \"Admin\",\r\n        \"dataCadastro\": \"2022-08-29\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-08-29\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,7 +404,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/sistemas/1",
+							"raw": "http://localhost:8080/sistemas/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -302,7 +412,7 @@
 							"port": "8080",
 							"path": [
 								"sistemas",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -311,10 +421,20 @@
 				{
 					"name": "Deletar Sistemas",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/sistemas/1",
+							"raw": "http://localhost:8080/sistemas/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -322,7 +442,7 @@
 							"port": "8080",
 							"path": [
 								"sistemas",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -336,6 +456,16 @@
 				{
 					"name": "Buscar Cidades",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -355,11 +485,21 @@
 				{
 					"name": "Gravar Cidade",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": 777777,\r\n        \"descricao\": \"Midgard\",\r\n        \"ufCodigo\": 11,\r\n        \"dataCadastro\": \"2023-04-04\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-10-31\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -383,11 +523,21 @@
 				{
 					"name": "Alterar Cidades",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": 777778,\r\n        \"descricao\": \"Cosmo Canion\",\r\n        \"ufCodigo\": 11,\r\n        \"dataCadastro\": \"2023-04-04\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-10-31\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -395,7 +545,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/cidades/1",
+							"raw": "http://localhost:8080/cidades/777778",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -403,7 +553,7 @@
 							"port": "8080",
 							"path": [
 								"cidades",
-								"1"
+								"777778"
 							]
 						}
 					},
@@ -412,10 +562,20 @@
 				{
 					"name": "Deletar Cidades",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/cidades/1",
+							"raw": "http://localhost:8080/cidades/777777",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -423,7 +583,7 @@
 							"port": "8080",
 							"path": [
 								"cidades",
-								"1"
+								"777777"
 							]
 						}
 					},
@@ -437,6 +597,16 @@
 				{
 					"name": "Buscar Perfil Usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -456,11 +626,21 @@
 				{
 					"name": "Gravar Perfil Usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"descricao\": \"Consulta\",\r\n        \"status\": \"Ativo\",\r\n        \"dataCadastro\": \"2023-08-29\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2023-08-29\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -484,11 +664,21 @@
 				{
 					"name": "Alterar Perfil Usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": \"7863706\",\r\n        \"descricao\": \"Sistema\",\r\n        \"status\": \"Ativo\",\r\n        \"dataCadastro\": \"2022-08-29\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-08-29\",\r\n        \"usuarioAlteracao\": 1\r\n    }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -496,7 +686,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/perfisusuario/1",
+							"raw": "http://localhost:8080/perfisusuario/7863706",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -504,7 +694,7 @@
 							"port": "8080",
 							"path": [
 								"perfisusuario",
-								"1"
+								"7863706"
 							]
 						}
 					},
@@ -513,10 +703,20 @@
 				{
 					"name": "Deletar Perfil Usuário",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/perfisusuario/1",
+							"raw": "http://localhost:8080/perfisusuario/7863706",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -524,7 +724,7 @@
 							"port": "8080",
 							"path": [
 								"perfisusuario",
-								"1"
+								"7863706"
 							]
 						}
 					},
@@ -538,6 +738,16 @@
 				{
 					"name": "Buscar UF",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODExODU3MTh9.fhsF_K0orQPkxOmxB1OPdrEi4fWp1cbnaSJ-CwwbfC0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -557,11 +767,21 @@
 				{
 					"name": "Gravar UF",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODExODU3MTh9.fhsF_K0orQPkxOmxB1OPdrEi4fWp1cbnaSJ-CwwbfC0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Mônaco\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": 99,\r\n        \"descricao\": \"Ered Luin\",\r\n        \"regiao\": \"Norte\",\r\n        \"dataCadastro\": \"2022-10-31\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-10-31\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -585,11 +805,21 @@
 				{
 					"name": "Alterar UF",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODExODU3MTh9.fhsF_K0orQPkxOmxB1OPdrEi4fWp1cbnaSJ-CwwbfC0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"descricao\": \"Suzuka\",\r\n    \"regiao\": \"Central\",\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1\r\n}",
+							"raw": "    {\r\n        \"codigo\": 99,\r\n        \"descricao\": \"Minas Moria\",\r\n        \"regiao\": \"Norte\",\r\n        \"dataCadastro\": \"2022-10-31\",\r\n        \"usuarioCadastro\": 1,\r\n        \"dataAlteracao\": \"2022-10-31\",\r\n        \"usuarioAlteracao\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -597,7 +827,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/ufs/1",
+							"raw": "http://localhost:8080/ufs/99",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -605,7 +835,7 @@
 							"port": "8080",
 							"path": [
 								"ufs",
-								"1"
+								"99"
 							]
 						}
 					},
@@ -614,10 +844,20 @@
 				{
 					"name": "Deletar UF",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODExODU3MTh9.fhsF_K0orQPkxOmxB1OPdrEi4fWp1cbnaSJ-CwwbfC0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/ufs/1",
+							"raw": "http://localhost:8080/ufs/99",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -625,7 +865,7 @@
 							"port": "8080",
 							"path": [
 								"ufs",
-								"1"
+								"99"
 							]
 						}
 					},
@@ -639,6 +879,16 @@
 				{
 					"name": "Buscar Usuários",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODEwOTExMjd9.kS7WXad-tBos-lui1IELThyxYsMgsXj-JT2p9t5j4AM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -732,10 +982,20 @@
 				{
 					"name": "Buscar Munícipes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/municipes/",
+							"raw": "http://localhost:8080/municipes/8757509",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -743,19 +1003,29 @@
 							"port": "8080",
 							"path": [
 								"municipes",
-								""
+								"8757509"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Buscar Munícipe",
+					"name": "Buscar Munícipe por CPF",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/municipes/61309669843",
+							"raw": "http://localhost:8080/municipes/cpf/61309669843",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -763,7 +1033,38 @@
 							"port": "8080",
 							"path": [
 								"municipes",
+								"cpf",
 								"61309669843"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Munícipe por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/municipes/8757509",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"municipes",
+								"8757509"
 							]
 						}
 					},
@@ -772,11 +1073,21 @@
 				{
 					"name": "Gravar Munícipes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{    \"codigo\": null,\r\n    \"nome\": \"Gerente\",\r\n    \"login\": \"gerente\",\r\n    \"senha\": \"consulta\",\r\n    \"status\": \"Ativo\",\r\n    \"codigoPerfil\": 1,\r\n    \"codigoSistema\": 1,\r\n    \"dataCadastro\": \"2023-02-20\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2023-02-20\",\r\n    \"usuarioAlteracao\": 1,\r\n    \"roles\": null\r\n}",
+							"raw": "{\r\n    \"nome\": \"Kakaroto\",\r\n    \"telefone\": \"135 965 1494\",\r\n    \"nomeSocial\": null,\r\n    \"cpf\": \"61309669843\",\r\n    \"nomeMae\": \"Hunt de'-Ancy Willis\",\r\n    \"dataNascimento\": \"1982-12-13\",\r\n    \"sexo\": \"Male\",\r\n    \"codigoOcupacao\": 4721,\r\n    \"tipoLogradouro\": \"Court\",\r\n    \"logradouro\": \"Kropf\",\r\n    \"numeroLogradouro\": 333,\r\n    \"complemento\": null,\r\n    \"codigoBairro\": 98,\r\n    \"cep\": \"12236239\",\r\n    \"codigoCidade\": 355410,\r\n    \"anoObito\": null,\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"cidadeNascimento\": 355410,\r\n    \"solicitaExclusao\": false,\r\n    \"dataCadastro\": \"2021-12-06\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2022-05-23\",\r\n    \"usuarioAlteracao\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -800,11 +1111,21 @@
 				{
 					"name": "Alterar Munícipe",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"João Saint\"    \r\n}",
+							"raw": "{\r\n    \"codigo\": 8758509,\r\n    \"nome\": \"Vegeta\",\r\n    \"telefone\": \"135 965 1494\",\r\n    \"nomeSocial\": null,\r\n    \"cpf\": \"61309669843\",\r\n    \"nomeMae\": \"Hunt de'-Ancy Willis\",\r\n    \"dataNascimento\": \"1982-12-13\",\r\n    \"sexo\": \"Male\",\r\n    \"codigoOcupacao\": 4721,\r\n    \"tipoLogradouro\": \"Court\",\r\n    \"logradouro\": \"Kropf\",\r\n    \"numeroLogradouro\": 333,\r\n    \"complemento\": null,\r\n    \"codigoBairro\": 98,\r\n    \"cep\": \"12236239\",\r\n    \"codigoCidade\": 355410,\r\n    \"anoObito\": null,\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"cidadeNascimento\": 355410,\r\n    \"solicitaExclusao\": false,\r\n    \"dataCadastro\": \"2021-12-06\",\r\n    \"usuarioCadastro\": 1,\r\n    \"dataAlteracao\": \"2022-05-23\",\r\n    \"usuarioAlteracao\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -812,7 +1133,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/municipes/61309669843",
+							"raw": "http://localhost:8080/municipes/8758509",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -820,7 +1141,7 @@
 							"port": "8080",
 							"path": [
 								"municipes",
-								"61309669843"
+								"8758509"
 							]
 						}
 					},
@@ -893,6 +1214,39 @@
 			]
 		},
 		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Autenticação",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\" : \"admin\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Início",
 			"request": {
 				"method": "GET",
@@ -910,6 +1264,32 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSS1EQk0iLCJzdWIiOiJhZG1pbiIsImlkIjoxLCJleHAiOjE2ODExODU2NDh9.aWfbT2ubCEAOibOPlnNJbZ8uocLWYvskeMSKY7ip720"
 		}
 	]
 }

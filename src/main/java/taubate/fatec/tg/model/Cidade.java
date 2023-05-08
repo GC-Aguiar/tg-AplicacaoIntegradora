@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Cidade {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY) //Não deve ser gerado automaticamente
 	@Column(name = "CID_CODIGO")
 	private Integer codigo;
 	@Column(name = "CID_DESCRICAO", length = 80, nullable = false)

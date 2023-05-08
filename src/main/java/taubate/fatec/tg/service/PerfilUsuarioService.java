@@ -25,7 +25,6 @@ public class PerfilUsuarioService {
 		return repository.findById(id);
 	}
 	public List<String> buscarPerfilUsuarioPorStatus(String status){
-		
 		return repository.findPerfilUsuarioByStatus(status);
 	}
 	
@@ -37,12 +36,15 @@ public class PerfilUsuarioService {
 		repository.deleteById(id);
 	}
 	public void alterarPerfilUsuario(PerfilUsuario perfilUsuario, Integer id) {
-		/*
-        Employee updateEmployee = employeeRepository.findById(id)
-       .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
-		 */
+        if(perfilUsuario.getCodigo().equals(id) && repository.existsById(id)){
+        	System.out.println("Validação OK");                    
+        	
+        	repository.save(perfilUsuario); //Precisa receber todos os dados do bairro // Precisa passar o ID
+        }else {
+        	System.out.println("Erro na Validação");
+        }
 		
-		repository.save(perfilUsuario);
+		
 	}
 
 

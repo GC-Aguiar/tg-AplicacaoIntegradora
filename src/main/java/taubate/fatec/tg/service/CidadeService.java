@@ -43,8 +43,12 @@ public class CidadeService {
         Employee updateEmployee = employeeRepository.findById(id)
        .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + id));
 		 */
-		
-		repository.save(cidade);
+        if(cidade.getCodigo().equals(id) && repository.existsById(id)){
+        	System.out.println("Validação OK");
+        	repository.save(cidade); //Precisa receber todos os dados // Precisa passar o ID
+        }else {
+        	System.out.println("Erro na Validação");
+        }
 	}
 	
 

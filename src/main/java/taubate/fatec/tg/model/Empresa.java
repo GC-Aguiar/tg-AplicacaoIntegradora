@@ -16,8 +16,9 @@ public class Empresa {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "EMP_CODIGO")
+	@Column(name = "EMP_CODIGO")	
 	private Integer codigo;
+	
 	@Column(name = "EMP_DESCRICAO", length = 80, nullable = false)
 	private String descricao;
 	@Column(name = "EMP_CNPJ", length = 14, nullable = false)
