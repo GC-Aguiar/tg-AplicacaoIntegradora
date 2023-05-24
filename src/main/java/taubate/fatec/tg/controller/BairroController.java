@@ -26,7 +26,7 @@ public class BairroController {
 	private BairroService service;
 		
 	@GetMapping
-	@RolesAllowed("ROLE_ADMIN") // Perfis que podem acessar o método  @RolesAllowed({"USER", "ADMIN"})
+	//@RolesAllowed("ROLE_ADMIN") // Perfis que podem acessar o método  @RolesAllowed({"USER", "ADMIN"})
     public List<Bairro> listar(){
     	System.out.println("List");
         return service.buscarBairros();
@@ -37,6 +37,8 @@ public class BairroController {
     	return service.buscarBairroPorId(id);	
     	
     }
+    
+
     
     @GetMapping("/regiao/{regiao}")
     public List<String> buscaPorRegiao(@PathVariable ("regiao") String regiao){

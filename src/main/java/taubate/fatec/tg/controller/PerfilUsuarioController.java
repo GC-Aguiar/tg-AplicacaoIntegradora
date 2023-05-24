@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import springfox.documentation.annotations.ApiIgnore;
 import taubate.fatec.tg.model.PerfilUsuario;
 import taubate.fatec.tg.service.PerfilUsuarioService;
 
+@ApiIgnore
 @RestController
 @RequestMapping("/perfisusuario")
 public class PerfilUsuarioController {

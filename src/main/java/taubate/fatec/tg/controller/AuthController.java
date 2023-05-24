@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import dto.Login;
+import taubate.fatec.tg.dto.Login;
 import taubate.fatec.tg.model.Usuario;
 import taubate.fatec.tg.service.TokenService;
 
@@ -23,6 +23,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login(@RequestBody Login login) {
+    	System.out.println("Início da Tentativa de login");
+    	
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(login.login(),
                         login.password());
@@ -31,6 +33,7 @@ public class AuthController {
                 .authenticate(usernamePasswordAuthenticationToken);
 
         var usuario = (Usuario) authenticate.getPrincipal();
+        System.out.println("login ok");
 
         return tokenService.gerarToken(usuario);
 

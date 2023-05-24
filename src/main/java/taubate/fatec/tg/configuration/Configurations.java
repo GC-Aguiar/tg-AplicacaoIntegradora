@@ -23,6 +23,21 @@ public class Configurations {
 	
 	@Autowired
     private FilterToken filter;
+	
+    private static final String[] AUTH_WHITELIST = {
+            // -- Swagger UI v2
+            "/v2/api-docs",
+            "/swagger-resources",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**",
+            // -- Swagger UI v3 (OpenAPI)
+            "/v3/api-docs/**",
+            "/swagger-ui/**"
+            // other public endpoints of your API may be appended to this array
+    };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -32,12 +47,26 @@ public class Configurations {
                 .antMatchers(HttpMethod.POST, "/login")
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/inicio")
+                .permitAll()  
+                .antMatchers(AUTH_WHITELIST)
                 .permitAll()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-
+    
+    /*Teste*/
+//    .antMatchers(HttpMethod.GET, "/swagger-ui/*")
+//    .permitAll()
+//    .antMatchers(HttpMethod.GET, "**/swagger-resources/**")
+//    .permitAll()
+//    .antMatchers(HttpMethod.GET, "/swagger-ui.html")
+//    .permitAll()
+//    .antMatchers(HttpMethod.GET, "/v2/api-docs")
+//    .permitAll()
+    //.antMatchers(HttpMethod.GET, "/webjars/**")
+    //.permitAll()
+    //.antMatchers(AUTH_LIST).permitAll()//Novo
 
     @Bean
     public AuthenticationManager authenticationManager

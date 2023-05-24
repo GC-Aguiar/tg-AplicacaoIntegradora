@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import taubate.fatec.tg.model.Municipe;
 import taubate.fatec.tg.service.MunicipeService;
 
@@ -25,9 +24,9 @@ public class MunicipeController {
     private MunicipeService service; // mudar para service || controller > service > repository
     
     @GetMapping
-    public void list(){
+    public List<Municipe> buscarMunicipes(){
     	System.out.println("List");
-        service.buscarMunicipes();
+        return service.buscarMunicipes();
     }
 
     @GetMapping("/cpf/{cpf}")

@@ -27,7 +27,7 @@ public class UsuarioController {
    
 	
 	@GetMapping
-	@RolesAllowed("consulta")
+	//@RolesAllowed("1")
     public List<Usuario> list(){
     	System.out.println("List");
         return service.buscarUsuarios();
@@ -43,9 +43,9 @@ public class UsuarioController {
     }
 	@RolesAllowed("1")
     @PutMapping
-    public void update(@RequestBody Usuario usuario){
+    public void update(@RequestBody Usuario usuario, @PathVariable("/id") Integer id){
     	System.out.println("Update");
-        service.alterarUsuario(usuario);
+        service.alterarUsuario(usuario, id);
     }
 	//@RolesAllowed({"1", "2", "3", "admin"})
     @GetMapping("/{id}")

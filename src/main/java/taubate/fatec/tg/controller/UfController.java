@@ -13,33 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import taubate.fatec.tg.model.Uf;
 import taubate.fatec.tg.service.UfService;
 
 @RestController
 @RequestMapping("/ufs")
+@Api(tags = "UF", description = "Retorna dados referente às UFs.")
 public class UfController {
 	
 	@Autowired
 	private UfService service;
 	
+	@ApiOperation(value = "Endpoint GET", notes = "Retorna todas as UFs", hidden = false)
 	@GetMapping
     public List<Uf> listar(){
     	System.out.println("List");
         return service.buscarUfs();
     }
 	
+	@ApiOperation(value = "Endpoint GET", notes = "Retorna uma UF dado o ID", hidden = false)
 	@GetMapping("/{id}")
     public Optional<Uf> buscarPorId(@PathVariable ("id") Integer id){
     	return service.buscarUfPorId(id);	
     	
     }
     
+	@ApiOperation(value = "Endpoint GET", notes = "Retorna as UF de uma determinada região", hidden = false)
     @GetMapping("/regiao/{regiao}")
     public List<String> buscaPorRegiao(@PathVariable ("regiao") String regiao){
     	return service.buscarUfPorRegiao(regiao);    	
     }
     
+    @ApiOperation(value = "Endpoint POST", notes = "Salva uma nova UF", hidden = true)
     @PostMapping
     public void save(@RequestBody Uf uf){
     	System.out.println("Save");
@@ -47,11 +54,13 @@ public class UfController {
         service.gravarUf(uf);
     }
     
+    @ApiOperation(value = "Endpoint DELETE", notes = "Exclui uma UF", hidden = true)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id){
         service.deletarUf(id);
     }
     
+    @ApiOperation(value = "Endpoint PUT", notes = "Altera uma UF", hidden = true)
     @PutMapping("/{id}")
     public void update(@PathVariable("id") Integer id, @RequestBody Uf uf){
     	System.out.println("Update");
