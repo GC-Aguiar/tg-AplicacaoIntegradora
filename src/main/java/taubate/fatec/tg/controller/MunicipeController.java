@@ -13,52 +13,58 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import taubate.fatec.tg.model.Municipe;
 import taubate.fatec.tg.service.MunicipeService;
 
 @RestController
 @RequestMapping("/municipes")
+@Api(tags = "Munícipes", description = "Retorna dados referentes aos munícipes.")
 public class MunicipeController {
-	
-    @Autowired
-    private MunicipeService service; // mudar para service || controller > service > repository
-    
-    @GetMapping
-    public List<Municipe> buscarMunicipes(){
-    	System.out.println("List");
-        return service.buscarMunicipes();
-    }
 
-    @GetMapping("/cpf/{cpf}")
-    public Municipe find(@PathVariable ("cpf") String cpf){
-    	return service.buscarMunicipePorCpf(cpf);   	
-    	
-    }
-    
-    @GetMapping("/{id}")
-    public Optional<Municipe> buscarPorId(@PathVariable ("id") Integer id){
-    	return service.buscarMunicipePorId(id);	
-    	
-    }    
-     
-    @PostMapping
-    public void save(@RequestBody Municipe municipe){
-    	System.out.println("Save");
-    	System.out.println(municipe);    	
-        service.gravarMunicipe(municipe);
-    }
-    
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id){
-        service.deletarMunicipe(id);
-    }
-    
-    @PutMapping("/{id}")
-    public void update(@PathVariable("id") Integer id, @RequestBody Municipe municipe){
-    	System.out.println("-- Update --");
-    	System.out.println(municipe);
-    	
-        service.alterarMunicipe(municipe, id); //Recebe o bairro e o ID da URL para validar
-        
-    }
+	@Autowired
+	private MunicipeService service;
+
+	@GetMapping
+	@ApiOperation(value = "Listar munícipes", notes = "Retorna todos os munícipes cadastrados no SIDBM", hidden = false)
+	public List<Municipe> buscarMunicipes() {
+		System.out.println("List");
+		return service.buscarMunicipes();
+	}
+
+	@GetMapping("/cpf/{cpf}")
+	@ApiOperation(value = "Listar munícipe por CPF", notes = "Retorna um munícipe dado um CPF", hidden = false)
+	public Municipe find(@PathVariable("cpf") String cpf) {
+		return service.buscarMunicipePorCpf(cpf);
+	}
+
+	@GetMapping("/{id}")
+	@ApiOperation(value = "Listar munícipe por ID", notes = "Retorna um munícipe dado um ID", hidden = false)
+	public Optional<Municipe> buscarPorId(@PathVariable("id") Integer id) {
+		return service.buscarMunicipePorId(id);
+	}
+
+	@PostMapping
+	@ApiOperation(value = "Inserir novo munícipe", notes = "Insere um novo munícipe no SIDBM", hidden = false)
+	public void save(@RequestBody Municipe municipe) {
+		System.out.println("++ Inserindo no munícipe (save) ++ ");
+		System.out.println(municipe);
+		service.gravarMunicipe(municipe);
+	}
+
+	@DeleteMapping("/{id}")
+	@ApiOperation(value = "Excluir munícipe por ID", notes = "Exclui um munícipe do SIDBM", hidden = false)
+	public void delete(@PathVariable("id") Integer id) {
+		service.deletarMunicipe(id);
+	}
+
+	@PutMapping("/{id}")
+	@ApiOperation(value = "Alterar munícipe", notes = "Altera um munícipe dado um ID", hidden = false)
+	public void update(@PathVariable("id") Integer id, @RequestBody Municipe municipe) {
+		System.out.println("** Alterando municipe existente (Update) ** ");
+		System.out.println(municipe);
+
+		service.alterarMunicipe(municipe, id); // Recebe o munícipe e o ID da URL para validar
+	}
 }

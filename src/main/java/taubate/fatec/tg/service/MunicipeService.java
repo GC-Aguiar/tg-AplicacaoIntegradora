@@ -29,7 +29,11 @@ public class MunicipeService {
 	}
 	
 	public void gravarMunicipe(Municipe municipe) {
-		repository.save(municipe);
+		if(municipe.getCodigo() == null) {
+			repository.save(municipe);
+		}else {
+			System.out.println("Erro - O campo Código do munícipe não deve ser preeenchido");
+		}		
 	}
 	
 	public void deletarMunicipe(Integer id) {
