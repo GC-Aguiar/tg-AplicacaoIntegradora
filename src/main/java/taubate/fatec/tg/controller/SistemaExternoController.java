@@ -47,7 +47,7 @@ public class SistemaExternoController {
 	}
 
 	@PostMapping
-	@ApiOperation(value = "Inserir novo sistema externo", notes = "Insere um novo sistema externo no SIDBM", hidden = false)
+	@ApiOperation(value = "Inserir novo sistema externo", notes = "Insere um novo sistema externo no SIDBM", hidden = true)
 	public void save(@RequestBody SistemaExterno sistemaExterno) {
 		System.out.println("Save");
 		System.out.println(sistemaExterno);
@@ -55,13 +55,13 @@ public class SistemaExternoController {
 	}
 
 	@DeleteMapping("/{id}")
-	@ApiOperation(value = "Excluir sistema externo por ID", notes = "Exclui um sistema externo do SIDBM", hidden = false)
+	@ApiOperation(value = "Excluir sistema externo por ID", notes = "Exclui um sistema externo do SIDBM", hidden = true)
 	public void delete(@PathVariable("id") Integer id) {
 		service.deletarSistemaExterno(id);
 	}
 
 	@PutMapping("/{id}")
-	@ApiOperation(value = "Alterar sistema externo", notes = "Altera um sistema externo dado um ID", hidden = false)
+	@ApiOperation(value = "Alterar sistema externo", notes = "Altera um sistema externo dado um ID", hidden = true)
 	public void update(@PathVariable("id") Integer id, @RequestBody SistemaExterno sistemaExterno) {
 		System.out.println("Update");
 		System.out.println(sistemaExterno);

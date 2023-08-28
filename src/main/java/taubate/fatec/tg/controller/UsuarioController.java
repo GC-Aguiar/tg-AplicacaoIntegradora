@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import springfox.documentation.annotations.ApiIgnore;
 import taubate.fatec.tg.model.Usuario;
 import taubate.fatec.tg.service.UsuarioService;
 
+@ApiIgnore
 @RestController
 @RequestMapping("/usuarios")
 @Api(tags = "Usuários", description = "Retorna dados referentes aos usuários cadastrados no SIDBM.")

@@ -29,6 +29,8 @@ public class SistemaExterno {
 	private String email;
 	@Column(name = "SIS_PREPOSTO", length = 80, nullable = false)
 	private String preposto;
+	@Column(name = "SIS_CONTAGEM_ACESSOS", nullable = false)
+	private Integer contagemAcessos;
 	
 	@Column(name = "SIS_DATA_CADASTRO", nullable = false)
 	private Date dataCadastro;
@@ -45,8 +47,8 @@ public class SistemaExterno {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(codigo, dataAlteracao, dataCadastro, descricao, email, empCodigo, preposto, status,
-				usuarioAlteracao, usuarioCadastro);
+		return Objects.hash(codigo, contagemAcessos, dataAlteracao, dataCadastro, descricao, email, empCodigo, preposto,
+				status, usuarioAlteracao, usuarioCadastro);
 	}
 
 	@Override
@@ -58,7 +60,8 @@ public class SistemaExterno {
 		if (getClass() != obj.getClass())
 			return false;
 		SistemaExterno other = (SistemaExterno) obj;
-		return Objects.equals(codigo, other.codigo) && Objects.equals(dataAlteracao, other.dataAlteracao)
+		return Objects.equals(codigo, other.codigo) && Objects.equals(contagemAcessos, other.contagemAcessos)
+				&& Objects.equals(dataAlteracao, other.dataAlteracao)
 				&& Objects.equals(dataCadastro, other.dataCadastro) && Objects.equals(descricao, other.descricao)
 				&& Objects.equals(email, other.email) && Objects.equals(empCodigo, other.empCodigo)
 				&& Objects.equals(preposto, other.preposto) && Objects.equals(status, other.status)
@@ -66,12 +69,16 @@ public class SistemaExterno {
 				&& Objects.equals(usuarioCadastro, other.usuarioCadastro);
 	}
 
+
+
+
+
 	@Override
 	public String toString() {
 		return "SistemaExterno [codigo=" + codigo + ", descricao=" + descricao + ", empCodigo=" + empCodigo
-				+ ", status=" + status + ", email=" + email + ", preposto=" + preposto + ", dataCadastro="
-				+ dataCadastro + ", usuarioCadastro=" + usuarioCadastro + ", dataAlteracao=" + dataAlteracao
-				+ ", usuarioAlteracao=" + usuarioAlteracao + "]";
+				+ ", status=" + status + ", email=" + email + ", preposto=" + preposto + ", contagemAcessos="
+				+ contagemAcessos + ", dataCadastro=" + dataCadastro + ", usuarioCadastro=" + usuarioCadastro
+				+ ", dataAlteracao=" + dataAlteracao + ", usuarioAlteracao=" + usuarioAlteracao + "]";
 	}
 
 	public Integer getCodigo() {
@@ -120,6 +127,14 @@ public class SistemaExterno {
 
 	public void setPreposto(String preposto) {
 		this.preposto = preposto;
+	}
+	
+	public Integer getContagemAcessos() {
+		return contagemAcessos;
+	}
+
+	public void setContagemAcessos(Integer contagemAcessos) {
+		this.contagemAcessos = contagemAcessos;
 	}
 
 	public Date getDataCadastro() {

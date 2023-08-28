@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import taubate.fatec.tg.model.Municipe;
 import taubate.fatec.tg.service.MunicipeService;
+
+import br.com.caelum.stella.validation.CPFValidator;
+import br.com.caelum.stella.validation.InvalidStateException;
 
 @RestController
 @RequestMapping("/municipes")
@@ -47,14 +51,34 @@ public class MunicipeController {
 
 	@PostMapping
 	@ApiOperation(value = "Inserir novo munícipe", notes = "Insere um novo munícipe no SIDBM", hidden = false)
-	public void save(@RequestBody Municipe municipe) {
-		System.out.println("++ Inserindo no munícipe (save) ++ ");
-		System.out.println(municipe);
-		service.gravarMunicipe(municipe);
+	public ResponseEntity<String> save(@RequestBody Municipe municipe) {
+		
+		
+	    // Realiza a validação do CPF
+	    CPFValidator cpfValidator = new CPFValidator();
+	    try {
+	        cpfValidator.assertValid(municipe.getCpf());
+	    } catch (InvalidStateException e) {
+	        System.out.println("CPF inválido. Requisição recusada");
+	        System.out.println(municipe);
+	        return ResponseEntity.badRequest().body("Requisição negada: CPF inválido.");
+	    }
+		
+		if(service.buscarMunicipePorCpf(municipe.getCpf()) != null) {
+			System.out.println("Munícipe duplicado. Requisição recusada");
+			System.out.println(municipe);	
+			return ResponseEntity.badRequest().body("Requisição negada: CPF " + municipe.getCpf() + " já cadastrado.");			
+		}else {
+			System.out.println("++ Inserindo no munícipe (save) ++ ");
+			System.out.println(municipe);
+			service.gravarMunicipe(municipe);
+			return ResponseEntity.ok("Munícipe inserido no SIDBM com sucesso.");
+		}
+		
 	}
 
 	@DeleteMapping("/{id}")
-	@ApiOperation(value = "Excluir munícipe por ID", notes = "Exclui um munícipe do SIDBM", hidden = false)
+	@ApiOperation(value = "Excluir munícipe por ID", notes = "Exclui um munícipe do SIDBM", hidden = true)
 	public void delete(@PathVariable("id") Integer id) {
 		service.deletarMunicipe(id);
 	}

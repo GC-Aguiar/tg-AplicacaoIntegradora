@@ -45,6 +45,7 @@ public class CidadeController {
     }
     
     @PostMapping
+    @ApiOperation(value = "Cidades", hidden = true)
     public void save(@RequestBody Cidade cidade){
     	System.out.println("Save");
     	System.out.println(cidade);    	
@@ -52,11 +53,13 @@ public class CidadeController {
     }
     
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "Cidades", hidden = true)
     public void delete(@PathVariable("id") Integer id){
         service.deletarCidade(id);
     }
     
     @PutMapping("/{id}")
+    @ApiOperation(value = "Cidades", hidden = true)
     public void update(@PathVariable("id") Integer id, @RequestBody Cidade cidade){
     	System.out.println("Update");
     	System.out.println(cidade);

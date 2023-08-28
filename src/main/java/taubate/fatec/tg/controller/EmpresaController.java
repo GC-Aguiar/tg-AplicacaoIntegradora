@@ -55,13 +55,13 @@ public class EmpresaController {
 	}
 
 	@DeleteMapping("/{id}")
-	@ApiOperation(value = "Excluir empresa", notes = "Exclui uma empresa dado um ID", hidden = false)
+	@ApiOperation(value = "Excluir empresa", notes = "Exclui uma empresa dado um ID", hidden = true)
 	public void delete(@PathVariable("id") Integer id) {
 		service.deletarEmpresa(id);
 	}
 
 	@PutMapping("/{id}")
-	@ApiOperation(value = "Alterar empresa", notes = "Altera uma empresa dado um ID", hidden = false)
+	@ApiOperation(value = "Alterar empresa", notes = "Altera uma empresa dado um ID", hidden = true)
 	public void update(@PathVariable("id") Integer id, @RequestBody Empresa empresa) {
 		System.out.println("Update");
 		System.out.println(empresa);

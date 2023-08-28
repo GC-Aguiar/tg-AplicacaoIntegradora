@@ -3,9 +3,11 @@ package taubate.fatec.tg.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.annotation.security.RolesAllowed;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,10 +52,17 @@ public class BairroController {
     
     @PostMapping
     @ApiOperation(value = "Gravar bairro", notes = "Grava um novo bairro", hidden = true)
-    public void save(@RequestBody Bairro bairro){
+    public ResponseEntity<String> save(@Valid @RequestBody Bairro bairro, BindingResult result){
+        if (result.hasErrors()) {
+            // Se houver erros de validação, você pode retornar uma resposta com o código de erro 400 (Bad Request)
+            // e uma mensagem de erro contendo os detalhes dos erros de validação
+            return ResponseEntity.badRequest().body("Formato dos dados incorreto. Verifique os campos do bairro.");
+        }
     	System.out.println("Save");
     	System.out.println(bairro);    	
         service.gravarBairro(bairro);
+        
+        return ResponseEntity.ok("Bairro salvo com sucesso.");
     }
     
     @DeleteMapping("/{id}")

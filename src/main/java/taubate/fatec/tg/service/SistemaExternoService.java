@@ -45,6 +45,15 @@ public class SistemaExternoService {
         	System.out.println("Erro na Validação");
         }
 	}
+	
+	//Novo
+	public void incrementarAcessos(Optional<SistemaExterno> sistemaExternoOptional) {
+	    sistemaExternoOptional.ifPresent(sistemaExterno -> {
+	        sistemaExterno.setContagemAcessos(sistemaExterno.getContagemAcessos() + 1);
+	        repository.save(sistemaExterno);
+	    });
+	}
+
 
 
 }
